@@ -4,11 +4,13 @@
 % Replace `english' with e.g. `spanish' to change the document language
 \usepackage[english]{babel}
 \usepackage[numbers]{natbib}
+\usepackage{float}
 % Set page size and margins
 % Replace `letterpaper' with `a4paper' for UK/EU standard size
 \usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
 \usepackage{url}
 \sloppy
+
 
 % Useful packages
 \usepackage{amsmath}
@@ -196,8 +198,7 @@ The DAppControl contract has the option to define functions that execute at the 
 \item PostOps: This function can be triggered after the execution of the SolverOperations, and the allocateValue call. If this function reverts, the UserOperation will also be reverted. Importantly, the PostOps hook will know whether or not a SolverOperation was successful, which enables the Atlas module to use this hook as a fallback fulfillment if all SolverOperations fail. 
 \end{itemize}
 
-
-\begin{figure}
+\begin{figure}[H]
 \centering
 \includegraphics[width=.8\linewidth]{BlackAndWhiteCallStructure.png}
 \caption{\label{fig:BlackAndWhiteCallStructure.png}An illustration of the Atlas hooks.}
@@ -213,4 +214,3 @@ Effectively capturing and retaining MEV for originators and applications is best
 \bibliography{sample}
 
 \end{document}
-
